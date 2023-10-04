@@ -27,7 +27,6 @@ export class HeroComponent {
 
   reset(): void {
     this.name = 'ironman'
-
     this.age = 45
   }
 
