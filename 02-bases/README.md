@@ -1,4 +1,16 @@
-# Bases
+# Bases Angular desde Terminal VSC
+
+# Para comit
+1 git init
+2 git add .
+3 git commit -m "Mensaje"
+
+
+git remote add origin https://github.com/JorgeAvikla/curso_angular_2023.git
+git branch -M maingit
+git push -u origin main
+
+Para regresar al ultimo estado guardado git  checkout -- .
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
 
