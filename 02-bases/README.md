@@ -1,6 +1,6 @@
 # Bases Angular desde Terminal VSC
 
-# Para comit
+# Para comit inicial
 1 git init
 2 git add .
 3 git commit -m "Mensaje"
@@ -11,6 +11,12 @@ git branch -M maingit
 git push -u origin main
 
 Para regresar al ultimo estado guardado git  checkout -- .
+
+
+# Para comit 
+git add .
+git commit -m "Mensaje"
+git push
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
 
