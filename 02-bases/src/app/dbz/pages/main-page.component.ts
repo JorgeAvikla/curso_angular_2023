@@ -21,4 +21,11 @@ export class MainPageComponent{
       power: 7500
     }
   ];
+
+  onNewCharacter(character: Character):void{
+    console.log('Main')
+    console.log(character);
+    this.characters.push(character)
+
+  }
 }
