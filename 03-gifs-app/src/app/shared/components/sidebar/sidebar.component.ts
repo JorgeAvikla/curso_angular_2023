@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GifsService } from 'src/app/gifs/services/gifs.service';
+import { GifsService } from '../../../gifs/services/gifs.service';
 
 @Component({
   selector: 'shared-sidebar',
@@ -7,15 +7,16 @@ import { GifsService } from 'src/app/gifs/services/gifs.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-  constructor(private gifsService: GifsService) { }
 
-  get tags () {
-    return this.gifsService.tagHistory;
+  // private gifsService
+  constructor( private gifsService: GifsService  ) {}
+
+  get tags(): string[] {
+    return this.gifsService.tagsHistory;
   }
 
-  searchTag(busqueda:string) {
-    const newTag = this.tagInput.nativeElement.value;
-    this.gifsService.searchTag(newTag);
-    this.tagInput.nativeElement.value = '';
+  searchTag( tag: string ):void {
+    this.gifsService.searchTag( tag );
   }
+
 }
