@@ -1,4 +1,3 @@
-import { CountriesRoutingModule } from './../../countries-routing.module';
 import { Component } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/country';
@@ -10,12 +9,18 @@ import { Country } from '../../interfaces/country';
   ]
 })
 export class ByCapitalPageComponent {
+
   public countries: Country[] = [];
-  constructor(private CountriesService: CountriesService){}
-  searchByCapital (term: string){
-    this.CountriesService.searchCapital(term).subscribe(countries =>{
-      this.countries = countries;
-    });
-  console.log({term})
+
+  constructor( private countriesService: CountriesService ) {}
+
+  searchByCapital( term: string ):void  {
+    console.log( term );
+    this.countriesService.searchCapital( term )
+      .subscribe( countries => {
+        this.countries = countries;
+      });
+
   }
+
 }
