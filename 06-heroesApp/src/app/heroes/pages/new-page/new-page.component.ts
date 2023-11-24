@@ -30,12 +30,25 @@ export class NewPageComponent {
 
   get currentHero():Hero{
     const hero = this.heroForm.value as Hero;
-    return hero
+    return hero;
   }
 
     onSubmit():void{
-      console.log({formIsValid: this.heroForm.valid,
-        value: this.heroForm.value
-    })
-  }
+      if(this.heroForm.invalid) return;
+      if(this.currentHero.id){
+        this.heroesService.updateHero(this.currentHero)
+        .subscribe(hero =>{
+        //TODO: Mostar Snackabar
+        });
+        return
+      }
+
+      this.heroesService.addHero(this.currentHero)
+      .subscribe(hero =>{
+        //TODO: Mostar Snackabar y redirigir
+
+      })
+
+    }
+
 }

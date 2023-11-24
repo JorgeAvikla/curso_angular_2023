@@ -166,6 +166,24 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
+    },
+    {
+      "id": "aFcXaLA",
+      "superhero": "Jorge Avila",
+      "publisher": "DC Comics",
+      "alter_ego": "Ese Mi Yorch",
+      "first_appearance": "1994 comic",
+      "characters": "https://m.media-amazon.com/images/I/616DnGLn+mL._AC_UF894,1000_QL80_.jpg",
+      "alt_img": ""
+    },
+    {
+      "id": "n7v3qTm",
+      "superhero": "casd",
+      "publisher": "DC Comics",
+      "alter_ego": "24",
+      "first_appearance": "sdf",
+      "characters": "2e",
+      "alt_img": "https://cdn1.epicgames.com/offer/4bc43145bb8245a5b5cc9ea262ffbe0e/EGS_MarvelsSpiderManRemastered_InsomniacGamesNixxesSoftware_S2_1200x1600-76424286902489f4d9639ac9b735c2b2"
     }
   ]
 }
