@@ -1,6 +1,6 @@
 //se importa esta libreria para poder inyectar dependencias sin constructor de clase
 import { inject } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import {
   ActivatedRouteSnapshot,
   CanActivateFn,
@@ -19,15 +19,16 @@ const checkAuthStatus = (): boolean | Observable<boolean> => {
 
   return authService.checkAuthentication().pipe(
     tap((isAuthenticated) => {
-      if (!isAuthenticated) {
-        router.navigate(['/auth/login']);
+      if (isAuthenticated) {
+        router.navigate(['/']);
       }
-    })
+    }),
+    map(isAuthenticated => !isAuthenticated)
   );
 };
 
 //No hay necesidad de crear una clase, simplemente definiendo una función flecha y exportándola podemos utilizar sus funcionalidades de guard en el app-routing
-export const canActivateGuard: CanActivateFn = (
+export const canActivateGuardPublic: CanActivateFn = (
   //Hay que tener en cuenta el tipado CanActiveFn
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
@@ -38,7 +39,7 @@ export const canActivateGuard: CanActivateFn = (
   return checkAuthStatus();
 };
 
-export const canMatchGuard: CanMatchFn = (
+export const canMatchGuardPublic: CanMatchFn = (
   //Tipado CanMatchFN
   route: Route,
   segments: UrlSegment[]

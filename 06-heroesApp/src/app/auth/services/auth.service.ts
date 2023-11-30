@@ -6,6 +6,9 @@ import { Observable, catchError, map, of, tap } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
+  verificarAutenticación() {
+    throw new Error('Method not implemented.');
+  }
   private baseUrl = environments.baseUrl;
   private user?: User;
 
